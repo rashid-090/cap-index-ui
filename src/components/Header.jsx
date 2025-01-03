@@ -24,7 +24,7 @@ const Menu = [
       { img:navalterna,label: 'Alternative Investment Fund', url: '/alternative-investment-fund' },
       { img:navinsure,label: 'Insurance', url: '/insurance' },
       { img:navportf,label: 'Intelligent Advisory Portfolios', url: '/intelligent-advisory-portfolios' },
-      { img:navfutur ,label: 'Portfolio Management Services', url: '/portfolio-management-services' },
+      // { img:navfutur ,label: 'Portfolio Management Services', url: '/portfolio-management-services' },
       { img:navderiv,label: 'Derivative', url: '/derivative' },
     ],
   },

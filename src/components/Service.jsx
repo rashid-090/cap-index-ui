@@ -36,12 +36,12 @@ const ServiceData = [
     title: `Mutual Fund`,
     para: `A mutual fund is an investment vehicle that pools money from multiple investors to purchase a diversified portfolio of stocks, bonds, or other securities (according to the fund's stated strategy).`,
   },
-  {
-    id: 3,
-    icon: <BsSubstack />,
-    title: `Portfolio Management Services`,
-    para: `Portfolio Management Services (PMS) offer tailored investment solutions to high-net-worth individuals (HNIs). PMS involves a professional fund manager who manages your investments based on your financial goals and risk profile.`,
-  },
+  // {
+  //   id: 3,
+  //   icon: <BsSubstack />,
+  //   title: `Portfolio Management Services`,
+  //   para: `Portfolio Management Services (PMS) offer tailored investment solutions to high-net-worth individuals (HNIs). PMS involves a professional fund manager who manages your investments based on your financial goals and risk profile.`,
+  // },
   {
     id: 4,
     icon: <BsSubstack />,

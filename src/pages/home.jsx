@@ -20,7 +20,7 @@ const Home = () => {
       <Banner/>
       {/* about */}
       <div className='w-11/12 xl:w-9/12 mx-auto pt-20 py-10 xl:pb-20'>
-        <h2 data-aos="fade-up" className='text-2xl xl:text-5xl capitalize text-center font-black text-secclr'>We are at service<br className='hidden xl:block'/> <span className='text-prmclr'>guiding you in the right way</span></h2>
+        <h2 data-aos="fade-up" className='text-2xl xl:text-5xl capitalize text-center font-black text-secclr'>We are at your service,<br className='hidden xl:block'/> <span className='text-prmclr'>guiding you in the right way.</span></h2>
       </div>
       {/* <div className='bg-white pt-28 py-10 xl:py-20 xl:pt-24'>
           <div className='w-11/12 2xl:w-10/12 mx-auto grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-10 xl:gap-x-20'>
