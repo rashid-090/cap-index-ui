@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { SiWindows } from "react-icons/si";
 import { HiMiniRectangleStack } from "react-icons/hi2";
@@ -9,60 +9,38 @@ import { Faq } from '../../components';
 import PhoneInput from 'react-phone-input-2'
 import 'react-phone-input-2/lib/style.css'
 
-const ServiceData = [
-  {
-    id: 1,
-    icon: <BsSubstack />,
-    title: `IPO`,
-    para: `An IPO, or Initial Public Offering, is the process through which a previously completely private business opens up its shares to be traded in public on an exchange. When a company goes public, it hires investment banks to ensure that the IPO results in a high influx of capital from the public. Share markets are of two types: primary markets and secondary markets.`,
-  },
-  {
-    id: 1,
-    icon: <BsSubstack />,
-    title: `Mutual Fund`,
-    para: `A mutual fund is an investment vehicle that pools money from multiple investors to purchase a diversified portfolio of stocks, bonds, or other securities (according to the fund's stated strategy). It allows individual investors to gain exposure to a professionally-managed portfolio and potentially benefit from economies of scale, while spreading risk across multiple investments.`,
-  },
-  {
-    id: 1,
-    icon: <BsSubstack />,
-    title: `Futures and Options`,
-    para: `Futures and options are the major types of stock derivatives trading in a share market. These are contracts signed by two parties for trading a stock asset at a predetermined price on a later date. Such contracts try to hedge market risks involved in stock market trading by locking in the price beforehand.`,
-  },
-  {
-    id: 1,
-    icon: <BsSubstack />,
-    title: `Equity trading`,
-    para: `Equity trading is a common way to invest involving buying and selling shares or stocks of companies traded on the stock market. It is a way for investors to own a piece of a company and benefit from its growth and profits.`,
-  },
-  {
-    id: 1,
-    icon: <BsSubstack />,
-    title: `Alternative Investment Fund`,
-    para: `Alternative Investment Fund or AIF is a privately pooled investment vehicle that invests in alternative asset classes such as private equity, venture capital, hedge funds, real estate, commodities, and derivatives`,
-  },
-  {
-    id: 1,
-    icon: <BsSubstack />,
-    title: `Insurance`,
-    para: `Insurance is a contract, represented by a policy, in which a policyholder receives financial protection or reimbursement against losses from an insurance company.`,
-  },
-  {
-    id: 1,
-    icon: <BsSubstack />,
-    title: `Intelligent Advisory Portfolios (IAPs)`,
-    para: `Intelligent Advisory Portfolios (IAPs) are pre-designed innovative investment solutions, curated to simplify equity market investing for those who don’t have time to stop and invest. `,
-  },
-  {
-    id: 1,
-    icon: <BsSubstack />,
-    title: `Derivative`,
-    para: `A derivative is a structured financial contract that enables an investor to buy or sell an asset at a specified future date. Moreover, derivative trading is a leveraged form of trading, meaning you can buy a large quantity of the underlying assets by paying a small amount.`,
-  },
 
-
-];
 
 const MutualFund = () => {
+
+  const [mobileNumber, setMobileNumber] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!mobileNumber) {
+      setErrorMessage('Please enter your mobile number.');
+      return;
+    }
+
+    // Clear error if the field is valid
+    setErrorMessage('');
+
+    // WhatsApp API URL to send message to the given phone number
+    const whatsappNumber = '917907302020';
+    const whatsappApiUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=
+      Mobile: ${encodeURIComponent(mobileNumber)}`;
+
+    // Open the WhatsApp URL with the form data
+    window.open(whatsappApiUrl, '_blank');
+
+    // Clear form fields after sending
+    setMobileNumber('');
+  };
+
+
+
   return (
     <section className='w-11/12 2xl:w-10/12 mx-auto min-h-screen py-20 pt-32 xl:pt-40 text-secclr'>
          {/* <span className="flex capitalize gap-1 text-base font-medium">
@@ -78,19 +56,22 @@ const MutualFund = () => {
               <h2 className='text-3xl md:text-5xl xl:text-7xl font-black text-center '><span className='text-prmclr'>Mutual Funds</span> Today</h2>
             </div>
             <div className='grid place-items-center pt-10'>
-            <div className='relative font-bold rounded-full xl:w-[40%] flex flex-col md:flex-row gap-y-5 md:gap-y-0 justify-between items-center md:border p-1'>
-                  <PhoneInput
-                            required
-                            className='p-2 h-full w-full border md:border-none rounded-full'
-                            enableSearch={true}
-                            disableSearchIcon={true}
-                            inputProps={{name:"mobileNumber",required: true, autoFocus: true}}
-                            buttonStyle={{background:"transparent",border:"none"}}
-                            inputStyle={{background:"transparent",border:"none",}}
-                            country={'in'}
-                        /> 
-                  <button className='bg-secclr hover:bg-prmclr duration-200 px-5 text-nowrap py-3 font-normal rounded-full text-white capitalize text-sm'>Apply now</button>
-              </div>
+            <form onSubmit={handleSubmit}  className='relative font-bold rounded-full xl:w-[40%] flex flex-col md:flex-row gap-y-5 md:gap-y-0 justify-between items-center md:border p-1'>
+                      <PhoneInput
+                    required
+                    className='p-2 h-full w-full border md:border-none rounded-full'
+                    enableSearch={true}
+                    disableSearchIcon={true}
+                    inputProps={{ name: "mobileNumber", required: true, autoFocus: true }}
+                    buttonStyle={{ background: "transparent", border: "none" }}
+                    inputStyle={{ background: "transparent", border: "none" }}
+                    country={'in'}
+                    value={mobileNumber} // Bind the value to state
+                    onChange={(value) => setMobileNumber(value)} // Update the state
+                  />
+                  <button  className='bg-secclr hover:bg-prmclr duration-200 px-5 text-nowrap py-3 font-normal rounded-full text-white capitalize text-sm'>Apply now</button>
+              </form>
+              {errorMessage && <p className=" text-xs text-red-600">{errorMessage}</p>}
             </div>
         </div>
 

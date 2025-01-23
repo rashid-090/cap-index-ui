@@ -207,15 +207,15 @@ const LumpsumCalculator = () => {
               <div className="mt-6 text-xs md:text-sm p-4 py-6 bg-[#dcecf9] text-secclr font-semibold text-center rounded-lg">
                 <div className="flex items-center justify-between">
                   <p>Invested Amount</p>
-                  <span className="font-black">₹ {totalInvestment}</span>
+                  <span className="font-semibold">₹ {totalInvestment}</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <p>Estimated Returns</p>
-                  <span className="font-black">₹ {estimatedReturns}</span>
+                  <span className="font-semibold">₹ {estimatedReturns}</span>
                 </div>
                 <div className="flex items-center justify-between">
                   <p>Total Value</p>
-                  <span className="font-black">₹ {futureValue}</span>
+                  <span className="font-semibold">₹ {futureValue}</span>
                 </div>
               </div>
             ) : (

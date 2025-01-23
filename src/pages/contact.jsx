@@ -13,10 +13,19 @@ const Contact = () => {
   const [mobileNumber, setMobileNumber] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const [error, setError] = useState(''); // Error state for validation
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    
+
+    // Validation: Check if mobileNumber is empty
+    if (!mobileNumber) {
+      setError('Mobile number is required.');
+      return;
+    }
+
+    setError(''); // Clear error if validation passes
+
     // WhatsApp API URL to send message to the given phone number
     const whatsappNumber = '917907302020'; // The WhatsApp number to send the message to
     const whatsappApiUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=
@@ -27,11 +36,12 @@ const Contact = () => {
 
     // Open the WhatsApp URL with the form data
     window.open(whatsappApiUrl, '_blank');
-     // Clear form fields after sending
-     setName('');
-     setMobileNumber('');
-     setEmail('');
-     setMessage('');
+
+    // Clear form fields after sending
+    setName('');
+    setMobileNumber('');
+    setEmail('');
+    setMessage('');
   };
 
   return (
@@ -69,13 +79,14 @@ const Contact = () => {
                   className='border-b border-gray-300'
                   enableSearch={true}
                   disableSearchIcon={true}
-                  inputProps={{name: "mobileNumber", required: true, autoFocus: true}}
+                  inputProps={{ name: "mobileNumber", required: true, autoFocus: true }}
                   buttonStyle={{ background: "transparent", border: "none" }}
                   inputStyle={{ background: "transparent", border: "none", fontSize: "16px", color: "#000" }}
                   country={'in'}
                   value={mobileNumber}
                   onChange={(value) => setMobileNumber(value)}
                 />
+                {error && <p className="text-red-500 text-xs mt-2">{error}</p>} {/* Display error */}
               </div>
               <div className='flex flex-col text-gray-600'>
                 <label>Email</label>

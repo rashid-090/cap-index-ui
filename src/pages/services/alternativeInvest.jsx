@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import { SiWindows } from "react-icons/si";
 import { HiMiniRectangleStack } from "react-icons/hi2";
@@ -63,6 +63,31 @@ const ServiceData = [
 ];
 
 const AlternativeInvestment = () => {
+  const [mobileNumber, setMobileNumber] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!mobileNumber) {
+      setErrorMessage('Please enter your mobile number.');
+      return;
+    }
+
+    // Clear error if the field is valid
+    setErrorMessage('');
+
+    // WhatsApp API URL to send message to the given phone number
+    const whatsappNumber = '917907302020';
+    const whatsappApiUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=
+      Mobile: ${encodeURIComponent(mobileNumber)}`;
+
+    // Open the WhatsApp URL with the form data
+    window.open(whatsappApiUrl, '_blank');
+
+    // Clear form fields after sending
+    setMobileNumber('');
+  };
   return (
     <section className='w-11/12 2xl:w-10/12 mx-auto min-h-screen py-20 pt-32 xl:pt-40 text-secclr'>
          {/* <span className="flex capitalize gap-1 text-base font-medium">
@@ -78,19 +103,22 @@ const AlternativeInvestment = () => {
               <h2 className='text-3xl md:text-5xl xl:text-7xl font-black text-center '><span className='text-prmclr'>Investment Fund</span> Today</h2>
             </div>
             <div className='grid place-items-center pt-10'>
-            <div className='relative font-bold rounded-full xl:w-[40%] flex flex-col md:flex-row gap-y-5 md:gap-y-0 justify-between items-center md:border p-1'>
-                  <PhoneInput
-                            required
-                            className='p-2 h-full w-full border md:border-none rounded-full'
-                            enableSearch={true}
-                            disableSearchIcon={true}
-                            inputProps={{name:"mobileNumber",required: true, autoFocus: true}}
-                            buttonStyle={{background:"transparent",border:"none"}}
-                            inputStyle={{background:"transparent",border:"none",}}
-                            country={'in'}
-                        /> 
+            <form onSubmit={handleSubmit} className='relative font-bold rounded-full xl:w-[40%] flex flex-col md:flex-row gap-y-5 md:gap-y-0 justify-between items-center md:border p-1'>
+            <PhoneInput
+                    required
+                    className='p-2 h-full w-full border md:border-none rounded-full'
+                    enableSearch={true}
+                    disableSearchIcon={true}
+                    inputProps={{ name: "mobileNumber", required: true, autoFocus: true }}
+                    buttonStyle={{ background: "transparent", border: "none" }}
+                    inputStyle={{ background: "transparent", border: "none" }}
+                    country={'in'}
+                    value={mobileNumber} // Bind the value to state
+                    onChange={(value) => setMobileNumber(value)} // Update the state
+                  />
                   <button className='bg-secclr hover:bg-prmclr duration-200 px-5 text-nowrap py-3 font-normal rounded-full text-white capitalize text-sm'>Apply now</button>
-              </div>
+              </form>
+              {errorMessage && <p className=" text-xs text-red-600">{errorMessage}</p>}
             </div>
         </div>
 

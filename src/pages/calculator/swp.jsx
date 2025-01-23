@@ -256,15 +256,15 @@ const SWPCalculator = () => {
               <div className="mt-6 text-xs md:text-sm p-4 py-6 bg-[#dcecf9] text-secclr font-semibold text-center rounded-lg">
                 <div className="flex justify-between items-center">
                   <p>Total Investment</p>
-                  <span className="font-black">₹ {totalInvestment}</span>
+                  <span className="font-semibold">₹ {totalInvestment}</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <p>Total Withdrawn</p>
-                  <span className="font-black">₹ {totalWithdrawn}</span>
+                  <span className="font-semibold">₹ {totalWithdrawn}</span>
                 </div>
                 <div className="flex justify-between items-center">
                   <p>Final Value</p>
-                  <span className="font-black">₹ {finalValue}</span>
+                  <span className="font-semibold">₹ {finalValue}</span>
                 </div>
               </div>
             ) : (

@@ -11,17 +11,17 @@ const Tabs = () => {
 
     {
       title: `What is Lorem Ipsum ?`,
-      description: `Cap Index is a leading financial services company based in Calicut, India. Since our inception in 2019, we have been dedicated to providing expert stock broking, investment solutions, portfolio management, and advisory services to our clients. Our mission is to deliver personalized financial solutions that help our society achieve their financial goals.`,
+      description: `Cap Index, established in 2019 in Calicut, India, is a futuristic-thinking financial services company dedicated to delivering personalized investment solutions. By combining market insights with advanced technological platforms, we provide comprehensive stock broking, portfolio management, and strategic financial advisory services, empowering individuals and institutions to achieve their financial goals through tailored, innovative approaches.`,
       image: capabt5
     },
     {
       title: `What is Lorem Ipsum ?`,
-      description: `Cap Index is a leading financial services company based in Calicut, India. Since our inception in 2019, we have been dedicated to providing expert stock broking, investment solutions, portfolio management, and advisory services to our clients. Our mission is to deliver personalized financial solutions that help our society achieve their financial goals.`,
+      description: `Cap Index, established in 2019 in Calicut, India, is a futuristic-thinking financial services company dedicated to delivering personalized investment solutions. By combining market insights with advanced technological platforms, we provide comprehensive stock broking, portfolio management, and strategic financial advisory services, empowering individuals and institutions to achieve their financial goals through tailored, innovative approaches.`,
       image: capabt5
     },
     {
       title: `What is Lorem Ipsum ?`,
-      description: `Cap Index is a leading financial services company based in Calicut, India. Since our inception in 2019, we have been dedicated to providing expert stock broking, investment solutions, portfolio management, and advisory services to our clients. Our mission is to deliver personalized financial solutions that help our society achieve their financial goals.`,
+      description: `Cap Index, established in 2019 in Calicut, India, is a futuristic-thinking financial services company dedicated to delivering personalized investment solutions. By combining market insights with advanced technological platforms, we provide comprehensive stock broking, portfolio management, and strategic financial advisory services, empowering individuals and institutions to achieve their financial goals through tailored, innovative approaches.`,
       image: capabt5
     },
   ];

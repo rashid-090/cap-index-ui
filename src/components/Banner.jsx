@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 import {shape1,shape2, cmp1,cmp2,cmp3,bansamp,mockMob} from '../assets'
 import { FaArrowRight } from "react-icons/fa6";
@@ -18,7 +18,36 @@ AOS.init({
     easing: 'ease',
 });
 
+
+
 const Banner = () => {
+
+    const [mobileNumber, setMobileNumber] = useState('');
+  const [errorMessage, setErrorMessage] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!mobileNumber) {
+      setErrorMessage('Please enter your mobile number.');
+      return;
+    }
+
+    // Clear error if the field is valid
+    setErrorMessage('');
+
+    // WhatsApp API URL to send message to the given phone number
+    const whatsappNumber = '917907302020';
+    const whatsappApiUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=
+      Mobile: ${encodeURIComponent(mobileNumber)}`;
+
+    // Open the WhatsApp URL with the form data
+    window.open(whatsappApiUrl, '_blank');
+
+    // Clear form fields after sending
+    setMobileNumber('');
+  };
+
   return (
     <>
         {/* Banner */}
@@ -32,7 +61,7 @@ const Banner = () => {
                                 <h2 className='text-3xl xl:text-4xl font-black'>Act Fast,  Invest Wisely<br className='hidden md:block'/> with <span className='text-prmclr'>Cap Index</span>.</h2>
                                 {/* <p className='text-lg font-medium'>Trusted by 1 Crore+ Indians</p> */}
                             </div>
-                            <form className='flex flex-col md:flex-row gap-3 items-center mt-3 text-sm'>
+                            <form onSubmit={handleSubmit} className='flex flex-col md:flex-row gap-3 items-center mt-3 text-sm'>
                                 <PhoneInput
                                 placeholder='Mobile'
                                 required
@@ -43,9 +72,14 @@ const Banner = () => {
                                         buttonStyle={{background:"transparent",border:"none"}}
                                         inputStyle={{background:"transparent",border:"none",fontSize:"14px",color:"#000"}}
                                         country={'in'}
+                                        value={mobileNumber}
+                                        onChange={(value) => setMobileNumber(value)}
                                     />   
                                 <button className='border p-3 xl:px-10 xl:p-4 w-full md:w-fit px-10 bg-secclr hover:bg-prmclr duration-200 text-white rounded-full font-semibold'>Send</button>
+
                             </form>
+                                {errorMessage && <p className="-mt-3 text-xs text-red-600">{errorMessage}</p>}
+                            
                             <p className='text-xs md:text-sm text-secclr'>Your financial future is in your hands.<br/> Make the right choice today.</p>
                             <span className='h-[2px] bg-prmclr w-32'></span>
                             
