@@ -130,7 +130,7 @@ const IPO = () => {
           </div>
           <div className='basis-1/2 flex flex-col justify-center gap-3'>
             <h2 className='text-2xl xl:text-4xl font-bold capitalize'>what is IPO ?</h2>
-            <p className='text-base xl:text-justify'>An IPO, or Initial Public Offering, is the process through which a previously completely private business opens up its shares to be traded in public on an exchange. When a company goes public, it hires investment banks to ensure that the IPO results in a high influx of capital from the public. Share markets are of two types: primary markets and secondary markets.</p>
+            <p className='text-base xl:text-justify'>An IPO, or Initial Public Offering, is the process through which a previously private or public business opens up its shares to be traded in public on an exchange. When a company goes public, it hires investment banks to ensure that the IPO results in a high influx of capital from the public. Share markets are of two types: primary markets and secondary markets.</p>
           </div>
         </div>
 

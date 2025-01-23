@@ -128,7 +128,7 @@ const Insurance = () => {
           </div>
           <div className='basis-1/2 flex flex-col justify-center gap-3'>
             <h2 className='text-2xl xl:text-4xl font-bold capitalize'>what is insurance ?</h2>
-            <p className='text-base xl:text-justify'>Insurance is a contract, represented by a policy, in which a policyholder receives financial protection or reimbursement against losses from an insurance company.</p>
+            <p className='text-base xl:text-justify'>Insurance is a financial protection mechanism where you pay a regular fee to an insurance company to receive compensation for potential future losses or unexpected events. The goal of insurance is to protect the insured from significant financial hardship and loss.</p>
           </div>
         </div>
 

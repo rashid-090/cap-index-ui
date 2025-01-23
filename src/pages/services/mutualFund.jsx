@@ -81,7 +81,7 @@ const MutualFund = () => {
           </div>
           <div className='basis-1/2 flex flex-col justify-center gap-3'>
             <h2 className='text-2xl xl:text-4xl font-bold capitalize'>what is mutual funds ?</h2>
-            <p className='text-base xl:text-justify'>A mutual fund is an investment vehicle that pools money from multiple investors to purchase a diversified portfolio of stocks, bonds, or other securities (according to the fund's stated strategy). It allows individual investors to gain exposure to a professionally-managed portfolio and potentially benefit from economies of scale, while spreading risk across multiple investments.</p>
+            <p className='text-base xl:text-justify'>An investment strategy that consolidates money from various investors, allowing them to collectively own a diverse set of stocks, bonds, and other financial securities through a single, professionally managed fund. It allows individual investors to gain exposure to a professionally-managed portfolio and potentially benefit from economies of scale, while spreading risk across multiple investments.</p>
           </div>
         </div>
 

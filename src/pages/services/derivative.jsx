@@ -128,7 +128,7 @@ const Derivative = () => {
           </div>
           <div className='basis-1/2 flex flex-col justify-center gap-3'>
             <h2 className='text-2xl xl:text-4xl font-bold capitalize'>what is derivative ?</h2>
-            <p className='text-base xl:text-justify'>A derivative is a structured financial contract that enables an investor to buy or sell an asset at a specified future date. Moreover, derivative trading is a leveraged form of trading, meaning you can buy a large quantity of the underlying assets by paying a small amount.</p>
+            <p className='text-base xl:text-justify'>Derivative trading is a financial strategy where investors trade contracts whose value is determined by an underlying asset like stocks, commodities, currencies, or market indexes, allowing them to speculate on or hedge against potential price changes without directly owning the original asset.</p>
           </div>
         </div>
 

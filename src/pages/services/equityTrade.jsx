@@ -128,7 +128,7 @@ const EquityTrade = () => {
           </div>
           <div className='basis-1/2 flex flex-col justify-center gap-3'>
             <h2 className='text-2xl xl:text-4xl font-bold capitalize'>what is equity ?</h2>
-            <p className='text-base xl:text-justify'>Equity trading is a common way to invest involving buying and selling shares or stocks of companies traded on the stock market. It is a way for investors to own a piece of a company and benefit from its growth and profits.</p>
+            <p className='text-base xl:text-justify'>Equity investing is a common way to invest involving buying and selling shares or stocks of companies traded on the stock market. It is a way for investors to own a piece of a company and benefit from its growth and profits.</p>
           </div>
         </div>
 
