@@ -81,8 +81,8 @@ const About = () => {
               </div>
               <div className='flex flex-col justify-center gap-5'>
                   <h2 data-aos="fade-up"  data-aos-delay="100" className='text-3xl text-secclr xl:text-5xl font-bold'>About <span className='text-prmclr'>Us</span></h2>
-                  <h4 data-aos="fade-up"  data-aos-delay="120" className="text-sm">Cap-Index Enterprises: A Premier Financial Powerhouse</h4>
-                  <p data-aos="fade-up"  data-aos-delay="150" className='text-base font-normal text-mygray text-justify'>Founded in 2019 by visionary leaders Mr. Thwayyb Mohiudheen (Managing Director and CEO) and Mr. Hathim Mohammed (Chairman), Cap-Index Enterprises stands as a distinguished financial advisory firm delivering comprehensive financial solutions. Our robust service portfolio spanning equity and commodity trading, portfolio management, mutual fund investments, derivative trading, and insurance reflects our commitment to providing sophisticated, client-centric financial strategies that transform individual and institutional investment landscapes.</p>
+                  <h4 data-aos="fade-up"  data-aos-delay="120" className="text-sm font-medium">Cap-Index Enterprises: A Premier Financial Powerhouse</h4>
+                  <p data-aos="fade-up"  data-aos-delay="150" className='text-base font-medium text-justify'>Founded in 2019 by visionary leaders Mr. Thwayyb Mohiudheen (Managing Director and CEO) and Mr. Hathim Mohammed (Chairman), Cap-Index Enterprises stands as a distinguished financial advisory firm delivering comprehensive financial solutions. Our robust service portfolio spanning equity and commodity trading, portfolio management, mutual fund investments, derivative trading, and insurance reflects our commitment to providing sophisticated, client-centric financial strategies that transform individual and institutional investment landscapes.</p>
                   <Link to={'/about'} data-aos="fade-up"  data-aos-delay="200" className='border w-fit border-secclr font-semibold px-10 h-11 grid place-items-center rounded-full hover:bg-secclr text-secclr hover:text-white duration-300'>Learn More</Link>
 
                   {/* <div data-aos="fade-up"  data-aos-delay="250" className='grid grid-cols-3 gap-2 md:gap-5 capitalize'>
@@ -154,7 +154,7 @@ const About = () => {
               Our <span className="text-prmclr">Core<br className="hidden xl:block" /> Values</span>
             </h2>
 
-            <p className="text-base font-medium text-mygray">
+            <p className="text-base font-medium ">
               Cap-index is committed to delivering exceptional financial
               services.
             </p>
@@ -166,7 +166,7 @@ const About = () => {
                 <div className="h-5 w-5 rounded-full bg-prmclr"></div>
                 <h4 className="text-xl font-bold capitalize">Integrity</h4>
               </div>
-              <p className="font-medium pl-8 text-mygray text-sm xl:w-[80%]">
+              <p className="font-medium pl-8  text-sm xl:w-[80%]">
               Upholding honesty and ethical standards in all our dealings.
               </p>
             </div>
@@ -178,7 +178,7 @@ const About = () => {
                 Client-Centricity
               </h4>
             </div>
-              <p className="font-medium pl-8 text-mygray text-sm xl:w-[80%]">
+              <p className="font-medium pl-8  text-sm xl:w-[80%]">
               Putting our clients' needs first and tailoring our services to their specific goals.
               </p>
             </div>
@@ -190,7 +190,7 @@ const About = () => {
                 Profound Knowledge
               </h4>
             </div>
-              <p className="font-medium pl-8 text-mygray text-sm xl:w-[80%]">
+              <p className="font-medium pl-8  text-sm xl:w-[80%]">
                  Leveraging our deep understanding of the financial market to provide expert advice.
               </p>
             </div>
@@ -200,7 +200,7 @@ const About = () => {
               <div className="h-5 w-5 rounded-full bg-prmclr"></div>
               <h4 className="text-xl font-bold capitalize">Innovation</h4>
             </div>
-              <p className="font-medium pl-8 text-mygray text-sm xl:w-[80%]">
+              <p className="font-medium pl-8  text-sm xl:w-[80%]">
               Continuously seeking new ways to improve our services and stay ahead of the curve
               </p>
             </div>
