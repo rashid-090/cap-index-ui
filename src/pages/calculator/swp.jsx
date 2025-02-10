@@ -22,8 +22,8 @@ ChartJS.register(
 );
 
 const SWPCalculator = () => {
-  const [investment, setInvestment] = useState(10000); // Initial investment
-  const [withdrawal, setWithdrawal] = useState(500); // Monthly withdrawal amount
+  const [investment, setInvestment] = useState("10000"); // Store as string to preserve leading zeros
+  const [withdrawal, setWithdrawal] = useState("500"); // Store as string to preserve leading zeros
   const [returnRate, setReturnRate] = useState(1); // Expected return rate
   const [timePeriod, setTimePeriod] = useState(1); // Time period in years
   const [totalInvestment, setTotalInvestment] = useState(10000); // Default total investment
@@ -34,10 +34,10 @@ const SWPCalculator = () => {
 
   // Function to calculate SWP values
   const calculateSWP = () => {
-    const P = investment; // Initial Investment
+    const P = parseFloat(investment); // Convert to number for calculations
+    const W = parseFloat(withdrawal); // Convert to number for calculations
     const monthlyRate = returnRate / 100 / 12; // Monthly return rate
     const months = timePeriod * 12; // Total months for withdrawal
-    const W = withdrawal; // Monthly withdrawal amount
 
     let remainingBalance = P; // Start with the total investment
     let totalWithdrawals = 0;
@@ -102,6 +102,18 @@ const SWPCalculator = () => {
     ],
   };
 
+       // Function to handle input changes and prevent 0 in the first position
+       const handleInputChange = (e, setterFunction) => {
+        const value = e.target.value;
+  
+        // Prevent entering 0 in the first position
+        if (value && value[0] === "0") {
+          setterFunction(value.slice(1)); // Remove the first 0 if it's there
+        } else {
+          setterFunction(value);
+        }
+      };
+
   // Trigger calculation when inputs change
   useEffect(() => {
     calculateSWP();
@@ -144,7 +156,7 @@ const SWPCalculator = () => {
                     type="number"
                     min="0"
                     value={investment}
-                    onChange={(e) => setInvestment(Number(e.target.value))}
+                    onChange={(e) => handleInputChange(e, setInvestment)}
                     className="w-full md:w-52 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 [&::-webkit-inner-spin-button]:appearance-none"
                   />
                 </div>
@@ -168,7 +180,7 @@ const SWPCalculator = () => {
                     type="number"
                     min="0"
                     value={withdrawal}
-                    onChange={(e) => setWithdrawal(Number(e.target.value))}
+                    onChange={(e) => handleInputChange(e, setWithdrawal)}
                     className="w-full md:w-52 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 [&::-webkit-inner-spin-button]:appearance-none"
                   />
                 </div>
@@ -192,7 +204,7 @@ const SWPCalculator = () => {
                     type="number"
                     min="0"
                     value={returnRate}
-                    onChange={(e) => setReturnRate(Number(e.target.value))}
+                    onChange={(e) => handleInputChange(e, setReturnRate)}
                     className="w-full md:w-52 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 [&::-webkit-inner-spin-button]:appearance-none"
                   />
                 </div>
@@ -216,7 +228,7 @@ const SWPCalculator = () => {
                     type="number"
                     min="0"
                     value={timePeriod}
-                    onChange={(e) => setTimePeriod(Number(e.target.value))}
+                    onChange={(e) => handleInputChange(e, setTimePeriod)}
                     className="w-full md:w-52 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 [&::-webkit-inner-spin-button]:appearance-none"
                   />
                 </div>

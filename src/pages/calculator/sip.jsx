@@ -10,7 +10,14 @@ import {
   PointElement,
 } from "chart.js";
 
-ChartJS.register(LineElement, Tooltip, Legend, CategoryScale, LinearScale, PointElement);
+ChartJS.register(
+  LineElement,
+  Tooltip,
+  Legend,
+  CategoryScale,
+  LinearScale,
+  PointElement
+);
 
 const SipCalculator = () => {
   const [monthlyInvestment, setMonthlyInvestment] = useState(500);
@@ -25,34 +32,62 @@ const SipCalculator = () => {
 
   // Function to calculate SIP with step-up and store data for chart
   const calculateSIP = () => {
+    // Ensure the growth rate is not zero and calculate monthly rate
     const r = growthRate / 100 / 12; // Monthly growth rate
     let totalValue = 0;
-    let investment = monthlyInvestment;
+    let investment = parseFloat(monthlyInvestment); // Ensure it's treated as a number
     let totalInvestedAmount = 0;
     const sipValues = []; // Store values for each month (future SIP value)
     const investedValues = []; // Store invested values for each month
     const returnsValues = []; // Store returns values for each month
+
+    // Check if investment is a valid number
+    if (isNaN(investment) || investment <= 0) {
+      console.error("Invalid monthly investment value");
+      return;
+    }
 
     for (let year = 1; year <= duration; year++) {
       for (let month = 1; month <= 12; month++) {
         totalValue +=
           investment *
           Math.pow(1 + r, duration * 12 - ((year - 1) * 12 + month));
+
+        // Accumulate the total invested amount over time
         totalInvestedAmount += investment;
 
-        sipValues.push(totalValue.toFixed(2)); // Store the total value for this month
-        investedValues.push(totalInvestedAmount.toFixed(2)); // Store the invested amount for this month
-        returnsValues.push((totalValue - totalInvestedAmount).toFixed(2)); // Store the returns for this month
+        // Store the SIP values (future SIP value), investment value, and returns for each month
+        sipValues.push(totalValue.toFixed(2));
+        investedValues.push(totalInvestedAmount.toFixed(2));
+        returnsValues.push((totalValue - totalInvestedAmount).toFixed(2));
       }
+
       // Apply step-up percentage after each year
       investment += (investment * stepUp) / 100;
     }
 
+    // Ensure totalInvestedAmount is a valid number before calling toFixed
+    const validTotalInvestedAmount = isNaN(totalInvestedAmount)
+      ? 0
+      : totalInvestedAmount;
+
     setResult(totalValue.toFixed(2));
-    setTotalInvestment(totalInvestedAmount.toFixed(2));
+    setTotalInvestment(validTotalInvestedAmount.toFixed(2)); // Ensure it's properly formatted to two decimals
     setSipData(sipValues); // Update the SIP data for the chart
     setInvestedData(investedValues); // Update the total investment data for the chart
     setReturnsData(returnsValues); // Update the returns data for the chart
+  };
+
+  // Function to handle input changes and prevent 0 in the first position
+  const handleInputChange = (e, setterFunction) => {
+    const value = e.target.value;
+
+    // Prevent entering 0 in the first position
+    if (value && value[0] === "0") {
+      setterFunction(value.slice(1)); // Remove the first 0 if it's there
+    } else {
+      setterFunction(value);
+    }
   };
 
   // Data for the line chart
@@ -97,7 +132,6 @@ const SipCalculator = () => {
     calculateSIP();
   }, [monthlyInvestment, growthRate, duration, stepUp]);
 
-
   const chartOptions = {
     scales: {
       x: {
@@ -121,7 +155,9 @@ const SipCalculator = () => {
     <section className="w-full h-full">
       <div className="grid grid-cols-1 md:grid-cols-2 h-fit shadow-xl xl:rounded-2xl overflow-hidden">
         <div className="p-5 h-fit bg-gray-50 text-sm">
-          <h1 className="text-2xl font-bold text-center mb-6">SIP Calculator</h1>
+          <h1 className="text-2xl font-bold text-center mb-6">
+            SIP Calculator
+          </h1>
 
           <div className="flex flex-col gap-1">
             {/* Monthly Investment Amount */}
@@ -134,7 +170,7 @@ const SipCalculator = () => {
                   min="0"
                   type="number"
                   value={monthlyInvestment}
-                  onChange={(e) => setMonthlyInvestment(Number(e.target.value))}
+                  onChange={(e) => handleInputChange(e, setMonthlyInvestment)}
                   className="w-full md:w-52 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 [&::-webkit-inner-spin-button]:appearance-none"
                 />
               </div>
@@ -158,7 +194,7 @@ const SipCalculator = () => {
                   min="0"
                   type="number"
                   value={growthRate}
-                  onChange={(e) => setGrowthRate(Number(e.target.value))}
+                  onChange={(e) => handleInputChange(e, setGrowthRate)}
                   className="w-full md:w-52 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 [&::-webkit-inner-spin-button]:appearance-none"
                 />
               </div>
@@ -182,7 +218,7 @@ const SipCalculator = () => {
                   type="number"
                   min="0"
                   value={duration}
-                  onChange={(e) => setDuration(Number(e.target.value))}
+                  onChange={(e) => handleInputChange(e, setDuration)}
                   className="w-full md:w-52 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 [&::-webkit-inner-spin-button]:appearance-none"
                 />
               </div>
@@ -206,7 +242,7 @@ const SipCalculator = () => {
                   type="number"
                   min="0"
                   value={stepUp}
-                  onChange={(e) => setStepUp(Number(e.target.value))}
+                  onChange={(e) => handleInputChange(e, setStepUp)}
                   className="w-full md:w-52 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 [&::-webkit-inner-spin-button]:appearance-none"
                 />
               </div>
@@ -231,7 +267,11 @@ const SipCalculator = () => {
                 <h2 className="text-2xl font-bold text-center mb-4">
                   Investment Breakdown
                 </h2>
-                <Line className="linechat border" data={lineData} options={chartOptions} />
+                <Line
+                  className="linechat border"
+                  data={lineData}
+                  options={chartOptions}
+                />
               </div>
             ) : (
               <p className="capitalize font-semibold text-secclr text-lg">
@@ -249,7 +289,9 @@ const SipCalculator = () => {
                 </div>
                 <div className="flex items-center justify-between">
                   <p>Estimated Returns</p>
-                  <span className="font-semibold">₹ {(result - totalInvestment).toFixed(2)}</span>
+                  <span className="font-semibold">
+                    ₹ {(result - totalInvestment).toFixed(2)}
+                  </span>
                 </div>
                 <div className="flex items-center justify-between">
                   <p>Future Value of SIP</p>
@@ -270,4 +312,4 @@ const SipCalculator = () => {
   );
 };
 
-export default SipCalculator;
+export default SipCalculator;

@@ -5,7 +5,7 @@ import { Chart as ChartJS, LineElement, Tooltip, Legend, CategoryScale, LinearSc
 ChartJS.register(LineElement, Tooltip, Legend, CategoryScale, LinearScale, PointElement);
 
 const LumpsumCalculator = () => {
-  const [investment, setInvestment] = useState(500); // Initial investment
+  const [investment, setInvestment] = useState("500"); // Store as string to preserve leading zeros
   const [returnRate, setReturnRate] = useState(1); // Expected return rate
   const [timePeriod, setTimePeriod] = useState(5); // Time period in years
   const [futureValue, setFutureValue] = useState(0); // Future value
@@ -15,7 +15,7 @@ const LumpsumCalculator = () => {
 
   // Function to calculate lumpsum future value
   const calculateLumpsum = () => {
-    const P = investment;
+    const P = parseFloat(investment); // Convert to number for calculations
     const r = returnRate / 100;
     const t = timePeriod;
 
@@ -45,34 +45,45 @@ const LumpsumCalculator = () => {
           data: investmentData,
           borderColor: "#16bbac",
           backgroundColor: "#16bbac",
-          fill: true, // Enable fill under the line
+          fill: true,
           borderWidth: 2,
           tension: 0.4,
-          pointRadius: 0, 
+          pointRadius: 0,
         },
         {
           label: "Estimated Returns",
           data: returnsData,
           borderColor: "#007aff",
           backgroundColor: "#007aff",
-          fill: true, // Enable fill under the line
+          fill: true,
           borderWidth: 2,
           tension: 0.4,
-          pointRadius: 0, 
+          pointRadius: 0,
         },
         {
           label: "Future Value",
           data: futureValueData,
           borderColor: "#ff8c00",
           backgroundColor: "#ff8c00",
-          fill: true, // Enable fill under the line
+          fill: true,
           borderWidth: 2,
           tension: 0.4,
-          pointRadius: 0, 
+          pointRadius: 0,
         },
       ],
     });
   };
+     // Function to handle input changes and prevent 0 in the first position
+     const handleInputChange = (e, setterFunction) => {
+      const value = e.target.value;
+
+      // Prevent entering 0 in the first position
+      if (value && value[0] === "0") {
+        setterFunction(value.slice(1)); // Remove the first 0 if it's there
+      } else {
+        setterFunction(value);
+      }
+    };
 
   // Automatically calculate Lumpsum on input change
   useEffect(() => {
@@ -118,7 +129,7 @@ const LumpsumCalculator = () => {
                     type="number"
                     min="0"
                     value={investment}
-                    onChange={(e) => setInvestment(Number(e.target.value))}
+                    onChange={(e) => handleInputChange(e, setInvestment)}
                     className="w-full md:w-52 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 [&::-webkit-inner-spin-button]:appearance-none"
                   />
                 </div>
@@ -142,7 +153,7 @@ const LumpsumCalculator = () => {
                     type="number"
                     min="0"
                     value={returnRate}
-                    onChange={(e) => setReturnRate(Number(e.target.value))}
+                    onChange={(e) => handleInputChange(e, setReturnRate)}
                     className="w-full md:w-52 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 [&::-webkit-inner-spin-button]:appearance-none"
                   />
                 </div>
@@ -166,7 +177,7 @@ const LumpsumCalculator = () => {
                     type="number"
                     min="0"
                     value={timePeriod}
-                    onChange={(e) => setTimePeriod(Number(e.target.value))}
+                    onChange={(e) => handleInputChange(e, setTimePeriod)}
                     className="w-full md:w-52 px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:border-blue-500 [&::-webkit-inner-spin-button]:appearance-none"
                   />
                 </div>
