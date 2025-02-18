@@ -11,18 +11,16 @@ const Tabs = () => {
 
     {
       title: `What is Lorem Ipsum ?`,
-      description: `Cap Index, established in 2019 in Calicut, India, is a futuristic-thinking financial services company dedicated to delivering personalized investment solutions across all societal strata. By combining market insights with advanced technological platforms, we provide comprehensive stock broking, portfolio management, and strategic financial advisory services, empowering individuals and institutions to achieve their financial goals through tailored, innovative approaches.`,
+      description: `Cap Index, established in 2019 in Calicut, India, is a futuristic-thinking financial services company dedicated to delivering personalized investment solutions across all societal strata. By combining market insights with advanced technological platforms, we provide comprehensive stock broking, empowering individuals and institutions to achieve their financial goals through tailored, innovative approaches.`,
       image: capabt5
     },
     {
       title: `What is Lorem Ipsum ?`,
-      description: `CCap Index, established in 2019 in Calicut, India, is a futuristic-thinking financial services company dedicated to delivering personalized investment solutions across all societal strata. By combining market insights with advanced technological platforms, we provide comprehensive stock broking, portfolio management, and strategic financial advisory services, empowering individuals and institutions to achieve their financial goals through tailored, innovative approaches.`,
-      image: capabt5
+      description: `Cap Index, established in 2019 in Calicut, India, is a futuristic-thinking financial services company dedicated to delivering personalized investment solutions across all societal strata. By combining market insights with advanced technological platforms, we provide comprehensive stock broking, empowering individuals and institutions to achieve their financial goals through tailored, innovative approaches.`,
     },
     {
       title: `What is Lorem Ipsum ?`,
-      description: `CCap Index, established in 2019 in Calicut, India, is a futuristic-thinking financial services company dedicated to delivering personalized investment solutions across all societal strata. By combining market insights with advanced technological platforms, we provide comprehensive stock broking, portfolio management, and strategic financial advisory services, empowering individuals and institutions to achieve their financial goals through tailored, innovative approaches.`,
-      image: capabt5
+      description: `Cap Index, established in 2019 in Calicut, India, is a futuristic-thinking financial services company dedicated to delivering personalized investment solutions across all societal strata. By combining market insights with advanced technological platforms, we provide comprehensive stock broking, empowering individuals and institutions to achieve their financial goals through tailored, innovative approaches.`,
     },
   ];
 

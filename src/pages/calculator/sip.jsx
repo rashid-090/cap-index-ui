@@ -287,15 +287,15 @@ const SipCalculator = () => {
                   <p>Total Investment</p>
                   <span className="font-semibold">₹ {totalInvestment}</span>
                 </div>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center font-black text-sm md:text-base justify-between">
                   <p>Estimated Returns</p>
-                  <span className="font-semibold">
+                  <span className="">
                     ₹ {(result - totalInvestment).toFixed(2)}
                   </span>
                 </div>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center font-black text-sm md:text-base justify-between">
                   <p>Future Value of SIP</p>
-                  <span className="font-semibold">₹ {result}</span>
+                  <span className="">₹ {result}</span>
                 </div>
               </div>
             ) : (
