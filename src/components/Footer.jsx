@@ -73,8 +73,8 @@ const Footer = () => {
     
               <div className='flex flex-col justify-start gap-4'>
                 <h4 className='text-sm font-extrabold text-black'>ADDRESS</h4>
-                <ul className='font-semibold flex flex-col gap-2'>
-                  <p>62/1155 The hub building,<br/> Near Gandhi park, 
+                <ul className='font-semibold flex flex-col gap-2 '>
+                  <p className=''>62/1155 The Hub Building,<br/> Near Gandhi Park, 
                   Cherooty Road,<br className='md:hidden'/> Kozhikode, Kerala, India - 673032</p>
                 </ul>
                 <div className='text-2xl flex gap-3 items-center'>
