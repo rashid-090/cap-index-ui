@@ -8,7 +8,7 @@ const TradingViewWidget1 = () => {
   const [data, setData] = useState([]);
   useEffect(() => {
   const fetchData = async () => {
-    const res = await api.get("/");
+    const res = await api.get("/livedata");
     setData(res.data);
 
     setTimeout(() => {

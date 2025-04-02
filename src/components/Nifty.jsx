@@ -103,7 +103,7 @@ const TradingViewWidget = () => {
 
   useEffect(() => {
     const fetchHistoricalData = async () => {
-      const res = await api.get("/historical/3month");
+      const res = await api.get("/historical");
       let data = res.data.bankNiftyHistory;
       data.map((obj, index) => {
         obj.value = res.data.bankNiftyHistory[index].open;
@@ -114,7 +114,7 @@ const TradingViewWidget = () => {
       setSelectedStock("NIFTY BANK");
     };
     const fetchLiveData = async () => {
-      const liveData = await api.get("/");
+      const liveData = await api.get("/livedata");
       console.log(liveData.data);
       setStocks(liveData.data);
       setTimeout(() => {
