@@ -74,8 +74,8 @@ const Footer = () => {
               <div className='flex flex-col justify-start gap-4'>
                 <h4 className='text-sm font-extrabold text-black'>ADDRESS</h4>
                 <ul className='font-semibold flex flex-col gap-2'>
-                  <p>612/1155 The Hub,<br/> Cherooty Road, 
-                    Near Gandhi park,<br className='md:hidden'/> Kozhikode, Kerala, India - 673001</p>
+                  <p>62/1155 The hub building,<br/> Near Gandhi park, 
+                  Cherooty Road,<br className='md:hidden'/> Kozhikode, Kerala, India - 673032</p>
                 </ul>
                 <div className='text-2xl flex gap-3 items-center'>
                   <a href="#" className='hover:scale-95 duration-200'><FaLinkedinIn/></a>

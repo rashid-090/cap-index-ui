@@ -28,7 +28,7 @@ import team4 from './images/team/thwayyb.webp'
 import team5 from './images/team/ummer.webp'
 import team6 from './images/team/w.webp'
 
-import ticker from './ticker.mp4'
+
 import maclap from './images/macc.webp'
 
 import brandicn from './images/bandicn.png'
@@ -61,7 +61,7 @@ export{
     capabtbg,
     ServMutual,ServIPO,ServEquity,ServDerivat,ServInsure,
     navipo,navfutur,navmutaul,navst0cks,navderiv,navportf,navalterna,navinsure,brandicn,
-    team1,team2,team3,team4,team5,team6,ticker,maclap,servbg1,
+    team1,team2,team3,team4,team5,team6,maclap,servbg1,
     Logoh,metaicon,Logow,capabt,capmap,capabt2,capabt3,capabt4,capabt5,capabt6,bansamp,calbg,
     shape1,
     shape2,

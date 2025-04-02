@@ -257,18 +257,7 @@ const About = () => {
                 Our <span className="text-prmclr">Expertise</span>
               </h2>
               <p className="text-base font-medium text-justify">
-                At Cap-index, our commitment to empowering clients extends
-                beyond mere advisory services — it reflects our expertise in
-                strategic decision-making. We understand that the success of any
-                venture hinges on sound decision-making, and that's where our
-                team of seasoned professionals excels. With a wealth of
-                experience and a diverse skill set, our experts guide you to
-                formulate tailored strategies for your business development
-                while adeptly navigating and mitigating potential risks. At the
-                heart of our approach is the dedication to leveraging our
-                collective expertise to propel your enterprise towards sustained
-                growth and prosperity.
-              </p>
+              At Cap-index, our commitment to empowering clients extends beyond mere advisory services — it reflects our expertise in strategic decision-making. We understand that the success of any venture hinges on sound investment decision-making, and that's where our team of seasoned professionals excels. With a wealth of experience and a diverse skill set, our experts guide you to formulate tailored strategies for customers financial goal. At the heart of our approach is the dedication to leveraging our collective expertise to propel your enterprise towards sustained growth and prosperity.              </p>
             </div>
           </div>
         </div>

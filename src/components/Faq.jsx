@@ -15,10 +15,10 @@ const Faq = () => {
   const [showMore, setShowMore] = useState(false); // State to control showing more FAQs
 
   const faqs = [
-    {
-      question: `What is an investment?`,
-      answer: `Investment refers to the process of allocating money or resources in order to generate income or profit in the future. Common types of investments include stocks, bonds, real estate, and mutual funds.`,
-    },
+    // {
+    //   question: `What is an investment?`,
+    //   answer: `Investment refers to the process of allocating money or resources in order to generate income or profit in the future. Common types of investments include stocks, bonds, real estate, and mutual funds.`,
+    // },
     {
       question: `Why should I invest my money instead of keeping it in a savings account? `,
       answer: `Investing helps your money grow over time, often at a faster rate than inflation. Savings accounts typically offer lower returns, while investments can yield higher returns through dividends, interest, and appreciation in value.`,

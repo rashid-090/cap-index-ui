@@ -6,7 +6,7 @@ import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { FaArrowLeft } from "react-icons/fa";
 import { FaArrowRight } from "react-icons/fa";
-import {ticker} from '../assets'
+
 import { SiWindows } from "react-icons/si";
 import { HiMiniRectangleStack } from "react-icons/hi2";
 import { BsSubstack } from "react-icons/bs";
