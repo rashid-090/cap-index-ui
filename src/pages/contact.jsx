@@ -7,6 +7,8 @@ import { capabt3 } from '../assets';
 import PhoneInput from 'react-phone-input-2';
 import 'react-phone-input-2/lib/style.css';
 import { Nifty, TestApi } from '../components';
+import { MdLocationPin } from "react-icons/md";
+import { FaPhoneAlt } from "react-icons/fa";
 
 const Contact = () => {
   const [name, setName] = useState('');
@@ -116,6 +118,80 @@ const Contact = () => {
         </div>
 
         {/* <TestApi/>/ */}
+         <h2 data-aos="fade-up" className="mt-40 mb-10 text-center text-xl text-secclr xl:text-3xl font-bold">
+            Our <span className="text-prmclr">Locations</span>
+          </h2>
+       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-5">
+  {[
+    {
+      city: "Kozhikode",
+      address: [
+        "62/1155, The Hub, Cherootty Road, Near Gandhi Park, Kozhikode, 673032, Kerala, India."
+      ],
+      phone: "+91 7907 30 20 20",
+      tel: "917907302020"
+    },
+    {
+      city: "Kochi",
+      address: [
+        "Door No. 46/3583/G-6 8G, Level-8, Nippon Q1 Business Park, Service road East, NH-66 Bypass, Vennala PO, Eranakulam, Kochi-682028."
+      ],
+      phone: "+91 7907 30 20 11",
+      tel: "917907302011"
+    },
+    {
+      city: "Wayanad",
+      address: [
+        "Room No. 17/479 G",
+        "Near Canal Road, Muttil Panchayat,",
+        "Wayanad - 673122"
+      ],
+      phone: "+91 6282 75 20 20",
+      tel: "916282752020"
+    },
+    {
+      city: "Kannur",
+      address: [
+        "Cap-index, 45/608, Beside Louis Philippe, Opposite Specialty Hospital, Thana, Kannur, Kerala - 670012."
+      ],
+      phone: "+91 8848 77 20 20",
+      tel: "918848772020"
+    }
+  ].map((loc, i) => (
+    <div
+      key={i}
+      data-aos="fade-up"
+      className="space-y-3 border p-5 rounded-2xl shadow-lg hover:shadow-2xl duration-200 h-full flex flex-col justify-between"
+    >
+      <p className="font-semibold text-lg">{loc.city}</p>
+
+      <div className="flex gap-2 items-start">
+        <div>
+          <MdLocationPin className="mt-[2px]" />
+        </div>
+
+        <p className="text-sm leading-relaxed">
+          {loc.address.map((line, idx) => (
+            <span key={idx}>
+              {line}
+              <br />
+            </span>
+          ))}
+        </p>
+      </div>
+
+      <a
+        href={`tel:${loc.tel}`}
+        className="text-sm font-semibold flex gap-2 items-start mt-2"
+      >
+        <FaPhoneAlt className="mt-[3px]" />
+        <p>{loc.phone}</p>
+      </a>
+    </div>
+  ))}
+</div>
+
+
       </section>
     </>
   );

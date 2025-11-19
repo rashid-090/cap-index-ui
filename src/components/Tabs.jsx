@@ -65,7 +65,7 @@ const Tabs = () => {
 
       {/* Tab Content with Transition */}
       <div
-        className={`md:w-[95%] bg-[#eef6fc] grid grid-cols-1 md:grid-cols-2 rounded-3xl overflow-hidden gap-5  transition-opacity duration-200 ${
+        className={` bg-[#eef6fc] grid grid-cols-1 md:grid-cols-2 rounded-3xl overflow-hidden gap-5  transition-opacity duration-200 ${
           isTransitioning ? 'opacity-0' : 'opacity-100'
         }`}
       >
