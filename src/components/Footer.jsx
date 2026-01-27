@@ -159,7 +159,11 @@ const Footer = () => {
               <ul className="font-medium flex flex-col justify-between gap-1">
                 <p className="font-bold">Kozhikode</p>
                 <p className="">
-                 62/1155, The Hub, Cherootty Road, Near Gandhi Park, Kozhikode, 673032, Kerala, India.
+                 Floor No: Second Floor<br/>
+                Building No: 62/1155 A25,A26,A27,A28,A29<br/>
+                Name Of Premises/Building: THE HUB<br/>
+                Road/Street: Cherooty Road<br/>
+                Kozhikode, Kerala, 673032
                 </p>
                 <a href="tel:917907302020" className="hover:underline">+91 7907 30 20 20</a>
               </ul>
@@ -190,7 +194,7 @@ const Footer = () => {
 
         {/* ======= */}
         <div className="pt-10 flex justify-between text-xs text-gray-500 ">
-          <p>©2024 - Copyright</p>
+          <p>©2026 - Copyright</p>
           <a
             className="hover:underline hover:text-secclr duration-300"
             href="https://dostudio.co.in"
