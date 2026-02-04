@@ -8,7 +8,7 @@ import { FaWhatsapp } from "react-icons/fa";
 import { FiPhoneCall } from "react-icons/fi";
 import { TbMail } from "react-icons/tb";
 import { IoMailOutline } from "react-icons/io5";
-import { FaLinkedinIn } from "react-icons/fa";
+import { FaLinkedinIn, FaFacebook, FaYoutube } from "react-icons/fa";
 
 import AOS from "aos";
 import "aos/dist/aos.css"; // You can also use <link> for styles
@@ -18,6 +18,31 @@ AOS.init({
   duration: 1000, // values from 0 to 3000, with step 50ms
   easing: "ease",
 });
+
+
+let socailsMedias = [
+  {
+    icon:<FaInstagram/>,
+    href:`https://www.instagram.com/cap_index?igsh=MTUyNWNrMmJyamgweA==`
+  },
+  {
+    icon:<FaLinkedinIn/>,
+    href:`https://www.linkedin.com/company/cap-index-enterprises-llp/`
+  },
+  {
+    icon:<FaFacebook/>,
+    href:`https://www.facebook.com/share/17SQ7ZogPY/?mibextid=wwXIfr`
+  },
+  {
+    icon:<FaYoutube/>,
+    href:`https://youtube.com/@cap-index?si=mKlV82LIwn31SmCV`
+  },
+  {
+    icon:<FaWhatsapp/>,
+    href:`https://api.whatsapp.com/send?phone=917907302020`
+  },
+
+]
 
 const Footer = () => {
   return (
@@ -58,20 +83,18 @@ const Footer = () => {
                 <TbMail className="text-base" />
                 <a href="mailto:connect@cap-index.com">connect@cap-index.com</a>
               </span>
-              <div className="text-2xl flex gap-3 items-center mt-3 text-secclr">
-                <a href="#" className="hover:scale-95 duration-200">
-                  <FaLinkedinIn />
-                </a>
-                <a href="#" className="hover:scale-95 duration-200">
-                  <IoMailOutline />
-                </a>
-                <a
-                  href="https://api.whatsapp.com/send?phone=917907302020"
-                  target="_blank"
-                  className="hover:scale-95 duration-200"
-                >
-                  <FaWhatsapp />
-                </a>
+              <div className="text-2xl flex gap-5 items-center mt-5 text-secclr">
+                {socailsMedias?.map((social, index) => (
+                  <a
+                    key={index}
+                    href={social.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:scale-110 duration-200 transition-transform"
+                  >
+                    {social.icon}
+                  </a>
+                ))}
               </div>
             </div>
           </div>
