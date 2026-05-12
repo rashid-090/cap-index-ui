@@ -182,34 +182,63 @@ const Footer = () => {
               <ul className="font-medium flex flex-col justify-between gap-1">
                 <p className="font-bold">Kozhikode</p>
                 <p className="">
-                 Floor No: Second Floor<br/>
-                Building No: 62/1155 A25,A26,A27,A28,A29<br/>
-                Name Of Premises/Building: THE HUB<br/>
-                Road/Street: Cherooty Road<br/>
-                Kozhikode, Kerala, 673032
+                 62/1155, The Hub, Cherootty Road,
+                  Near Gandhi Park, Kozhikode, 673032,
+                  Kerala, India.
                 </p>
-                <a href="tel:917907302020" className="hover:underline">+91 7907 30 20 20</a>
+                <a href="tel:917907302020" className="hover:underline w-fit w-fit">+91 7907 30 20 20</a>
+              </ul>
+              <ul className="font-medium flex flex-col justify-between gap-1">
+                <p className="font-bold">Malappuram</p>
+                <p className="">
+                 Central Tower
+                  Mundupparamba Bypass junction.
+                  Malappuram, Kerala, India
+                </p>
+                <a href="tel:+916238852020" className="hover:underline w-fit">+91 6238 85 20 20</a>
+              </ul>
+              <ul className="font-medium flex flex-col justify-start gap-1">
+                <p className="font-bold">Manjeri</p>
+                <p className="">
+                 Cap-index enterprises VP mall
+                  Manu Memorial Hospital Road, SH24, Melakkam, Manjeri, Kerala 676123
+                </p>
+                 <a href="tel:8921492020" className="hover:underline w-fit">+91 8921 49 20 20</a>
+              </ul>
+              <ul className="font-medium flex flex-col justify-start gap-1">
+                <p className="font-bold">Thrissur</p>
+                <p className="">
+                 Building No. 51/2384-24, at Thoppin Moola, Thrissur- 680004
+                </p>
+                <a href="tel:9188487020201" className="hover:underline w-fit">+91 8848 70 20 20</a>
+
               </ul>
               <ul className="font-medium flex flex-col justify-between gap-1">
                 <p className="font-bold">Kochi</p>
                 <p className="">
                   Door No. 46/3583/G-6 8G, Level-8, Nippon Q1 Business Park, Service road East, NH-66 Bypass, Vennala PO, Eranakulam, Kochi-682028.
                 </p>
-                    <a href="tel:917907302011" className="hover:underline">+91 7907 30 20 11</a>
+                    <a href="tel:917907302011" className="hover:underline w-fit">+91 7907 30 20 11</a>
               </ul>
               <ul className="font-medium flex flex-col justify-between gap-1">
                 <p className="font-bold">Wayanad</p>
                 <p className="">
                   Room No. 17/479 G<br/> Near Canal Road, Muttil Panchayat,<br/> Wayanad - 673122
                 </p>
-                <a href="tel:916282752020" className="hover:underline">+91 6282 75 20 20</a>
+                <a href="tel:916282752020" className="hover:underline w-fit">+91 6282 75 20 20</a>
               </ul>
               <ul className="font-medium flex flex-col justify-between gap-1">
                 <p className="font-bold">Kannur</p>
                 <p className="">
                   Cap-index, 45/608, Beside Louis Philippe, Opposite Specialty Hospital, Thana, Kannur, Kerala - 670012.
                 </p>
-                <a href="tel:918848772020" className="hover:underline">+91 8848 77 20 20</a>
+                <a href="tel:918848772020" className="hover:underline w-fit">+91 8848 77 20 20</a>
+              </ul>
+              <ul className="font-medium flex flex-col justify-between gap-1">
+                <p className="font-bold">Banglore</p>
+                <p className="">
+                  Ground Floor, No. 78/9, Outer Ring Road, Bellandur Village Varthur Hobli Bengaluru East, Bengaluru, Karnataka 560103                </p>
+                <a href="tel:918848712020" className="hover:underline w-fit">+91 8848 71 2 020</a>
               </ul>
             </div>
           </div>
